@@ -1,0 +1,17 @@
+class Solution {
+    public String reverseOnlyLetters(String S) {
+        Stack<Character>letters = new Stack();
+        for(char c:S.toCharArray()){
+            if(Character.isLetter(c))
+                letters.push(c);
+        }
+        StringBuilder sb = new StringBuilder();
+        for(char c:S.toCharArray()){
+            if(Character.isLetter(c))
+                sb.append(letters.pop());
+            else
+                sb.append(c);
+        }
+        return sb.toString();
+    }
+}
