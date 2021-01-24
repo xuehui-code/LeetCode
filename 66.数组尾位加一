@@ -1,0 +1,12 @@
+class Solution {
+    public int[] plusOne(int[] digits) {
+        for(int i=digits.length-1;i>=0;i--){  //在原本位数以内完成加一操作
+            digits[i]++;
+            digits[i] = digits[i]%10;
+            if(digits[i]!=0)return digits;
+        }
+        digits = new int[digits.length+1]; //超过原位数需要多增加一位，首位为一
+        digits[0] = 1;
+        return digits;
+    }
+}
