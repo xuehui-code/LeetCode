@@ -1,0 +1,18 @@
+class Solution {
+    public int compress(char[] chars) {
+        int x = 0;
+        int y = 0;
+        for(int i=0;i<chars.length;i++){  //遍历数组
+            if(i+1==chars.length||chars[i+1]!=chars[i]){  //如果遍历完或者两相邻元素不等
+                chars[y++] = chars[x];    
+                if(i>x){
+                    for(char c:(""+(i-x+1)).toCharArray()){
+                        chars[y++] = c;
+                    }
+                }
+                x = i+1;
+            }
+        }
+        return y;
+    }
+}
